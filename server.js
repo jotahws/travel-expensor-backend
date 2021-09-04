@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 //conexão com o banco de dados
-mongoose.connect(process.env.MONGO_CON, { useNewUrlParser:true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGO_CON, { useNewUrlParser: true, useUnifiedTopology: true });
 requireDir('./src/models');
 
 console.log('mongoose connected');
@@ -18,4 +18,4 @@ console.log('mongoose connected');
 //rotas
 app.use('/api', require("./src/routes"));
 
-app.listen(3001);
+app.listen(process.env.PORT || 3001);

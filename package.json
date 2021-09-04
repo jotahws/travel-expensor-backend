@@ -1,15 +1,14 @@
 {
-  "name": "api-crud-nodejs-mongodb",
+  "name": "travel-expensor-backend",
   "version": "1.0.0",
-  "description": "API Rest desenvolvida com Nodejs, Express e MongoDB",
+  "description": "TravelExpensor server-side application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon server.js",
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "Diego Hartwig",
+  "author": "Joao Wind",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
