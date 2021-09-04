@@ -7,7 +7,7 @@ module.exports = {
         console.log('Index user start');
         const { page = 1 } = req.query;
         try {
-            const users = await User.paginate({}, { page, limit: 5 });
+            const users = await User.find();
             return res.json(users)
         } catch (err) {
             return handleErrors(req, res, err)

@@ -7,7 +7,7 @@ module.exports = {
         console.log('index start');
         const { page = 1 } = req.query;
         try {
-            const expenses = await Expense.paginate({}, { page, limit: 5 });
+            const expenses = await Expense.find().populate('user');
             return res.json(expenses)
         } catch (err) {
             return handleErrors(req, res, err)
@@ -26,6 +26,7 @@ module.exports = {
 
     async store(req, res) {
         console.log('store start');
+        console.log(req.body);
         try {
             const expense = await Expense.create(req.body);
             return res.json(expense);
@@ -56,6 +57,8 @@ module.exports = {
 };
 
 function handleErrors(req, res, err) {
+    console.log('Error CRUD User: ' + err);
+    res.status(400);
     return res.json({
         success: false,
         message: err,
