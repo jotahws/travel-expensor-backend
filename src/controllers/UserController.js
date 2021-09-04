@@ -47,6 +47,7 @@ module.exports = {
 
 function handleErrors(req, res, err) {
     console.log('Error CRUD User: ' + err);
+    res.status(400);
     return res.json({
         success: false,
         message: err,
