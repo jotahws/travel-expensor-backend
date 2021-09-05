@@ -7,7 +7,7 @@ module.exports = {
         console.log('index start');
         const { page = 1 } = req.query;
         try {
-            const expenses = await Expense.find().populate('user');
+            const expenses = await Expense.find().populate('user').populate('spliters');
             return res.json(expenses)
         } catch (err) {
             return handleErrors(req, res, err)

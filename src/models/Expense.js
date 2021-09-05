@@ -29,6 +29,10 @@ const ExpenseSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
+    spliters: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'User',
+    },
     convertedAmount: {
         type: Number
     }
