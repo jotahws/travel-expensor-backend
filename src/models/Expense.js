@@ -10,9 +10,6 @@ const ExpenseSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    isInvoice: {
-        type: Boolean,
-    },
     description: {
         type: String
     },
